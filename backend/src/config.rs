@@ -6,7 +6,8 @@ pub struct Config {
     pub cred_email: String,
     pub cred_app_password: String,
     pub sender_email: String,
-    pub reciever_email: String
+    pub reciever_email: String,
+    pub database_url: String
 
 }
 
@@ -16,8 +17,9 @@ impl Config {
         Ok(Config {
             cred_email: env::var("CRED_EMAIL")?,
             cred_app_password: env::var("CRED_PASSWORD")?,
-            sender_email: env::var("SENDER_EMAIL")?, 
+            sender_email: env::var("SENDER_EMAIL")?,
             reciever_email: env::var("RECIEVER_EMAIL")?,
+            database_url: env::var("DATABASE_URL")?
         })
     }
 }
